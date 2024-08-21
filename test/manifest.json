@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "자막 표시기 server2",
+  "version": "1.0",
+  "description": "YouTube 동영상 재생 시 자동으로 자막을 생성하여 표시합니다.",
+  "permissions": ["activeTab", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["index.html"],
+      "matches": ["*://*.youtube.com/*"]
+    }
+  ]
+}
